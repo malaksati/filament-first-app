@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\Users\Tables;
+namespace App\Filament\Resources\Cities\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
@@ -8,17 +8,15 @@ use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class UsersTable
+class CitiesTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('name')->label('Name')->sortable()->searchable(),
-                TextColumn::make('email')->label('Email')->sortable()->searchable(),
-                TextColumn::make('state.name')->sortable()->searchable(),
-                TextColumn::make('city.name')->sortable()->searchable(),
-                TextColumn::make('country.name')->sortable()->searchable(),
+                TextColumn::make("name"),
+                TextColumn::make("state.name"),
+                TextColumn::make("state.country.name"),
             ])
             ->filters([
                 //
