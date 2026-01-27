@@ -51,14 +51,14 @@ class User extends Authenticatable
     }
 
     public function city() {
-        return $this->belogsTo(City::class);
+        return $this->belongsTo(City::class);
     }
 
     public function state() {
-        return $this->belogsTo(State::class);
+        return $this->belongsTo(State::class);
     }
-
+    
     public function country() {
-        return $this->belogsTo(Country::class);
+        return $this->belongsTo(Country::class);
     }
 }

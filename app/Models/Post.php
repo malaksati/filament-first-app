@@ -13,13 +13,11 @@ class Post extends Model
         "color",
         "image",
         "body",
-        "tags",
         "published",
         "published_at"
     ];
 
     protected $casts = [
-        "tags" => "array",
         "published" => "boolean",
         "published_at" => "date"
     ];

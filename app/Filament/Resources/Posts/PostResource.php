@@ -29,7 +29,7 @@ class PostResource extends Resource
 
     public static function getGloballySearchableAttributes(): array
     {
-        return ["title", "slug", "catigory.name"];
+        return ["title", "slug", "category.name"];
     }
 
     public static function getGlobalSearchResultDetails(Model $record): array
