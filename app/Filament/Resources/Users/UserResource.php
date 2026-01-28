@@ -7,6 +7,7 @@ use App\Filament\Resources\Users\Pages\EditUser;
 use App\Filament\Resources\Users\Pages\ListUsers;
 use App\Filament\Resources\Users\Schemas\UserForm;
 use App\Filament\Resources\Users\Tables\UsersTable;
+use App\Filament\Resources\Users\Widgets\UserCountWidget;
 use App\Models\User;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -21,7 +22,7 @@ class UserResource extends Resource
     protected static string|BackedEnum|null $navigationIcon = Heroicon::UserGroup;
 
     protected static ?string $recordTitleAttribute = 'name';
-
+    protected static string|\UnitEnum|null $navigationGroup = 'Masters';
     public static function form(Schema $schema): Schema
     {
         return UserForm::configure($schema);
@@ -36,6 +37,13 @@ class UserResource extends Resource
     {
         return [
             //
+        ];
+    }
+
+    public static function getWidgets(): array
+    {
+        return [
+            UserCountWidget::class
         ];
     }
 

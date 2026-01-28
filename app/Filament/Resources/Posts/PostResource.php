@@ -23,10 +23,11 @@ class PostResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
+    // protected static string|\UnitEnum|null $navigationGroup = 'Blog';
 
     // START FOR GLOBAL SEARCH => PUT TO ANY MODEL YOU WANT TO SEARCH GLOBALLY
     protected static ?string $recordTitleAttribute = 'title';
-
+    protected static string|\UnitEnum|null $navigationGroup = 'Masters';
     public static function getGloballySearchableAttributes(): array
     {
         return ["title", "slug", "category.name"];
