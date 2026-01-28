@@ -23,7 +23,9 @@ class User extends Authenticatable
         'password',
         'country_id',
         'state_id',
-        'city_id'
+        'city_id',
+        'status',
+        'role',
     ];
 
     
@@ -60,5 +62,17 @@ class User extends Authenticatable
     
     public function country() {
         return $this->belongsTo(Country::class);
+    }
+
+    public function isAdmin(){
+        return $this->role === 'admin';
+    }
+
+    public function isManager(){
+        return $this->role === 'manager';
+    }
+
+    public function isUser(){
+        return $this->role === 'user';
     }
 }
